@@ -5,7 +5,7 @@ void setup()
 }
 void draw()
 {
-  image(lowtiergod, 200, 200);
+  image(lowtiergod, 0, 0);
 }
 void mousePressed()
 {
