@@ -1,5 +1,3 @@
-Gang I cant make another fork what do i do
-
 PImage lowtiergod;
 PImage lowtiergodshower;
 float strok = 2.5;
