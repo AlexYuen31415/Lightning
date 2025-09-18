@@ -64,7 +64,7 @@ void lightning() {
     y = newY;
     
     chanceFork += (float)Math.random();
-    System.out.println(chanceFork);
+    //System.out.println(chanceFork);
     if (chanceFork > 3) {
       strok = strok/1.67;
       forkedLightningLeft(x, y);
@@ -109,7 +109,7 @@ void forkedLightningLeft(float startX, float startY) {
     y = newY_1;
     
     chanceFork += (float)Math.random();
-    System.out.println(chanceFork);
+    //System.out.println(chanceFork);
     if (chanceFork > 3) {
       forkedLightningLeft(newX_1, newY_1);
       forkedLightningRight(newX_1, newY_1);
@@ -143,7 +143,7 @@ void forkedLightningRight(float startX, float startY) {
     y = newY_2;
     
     chanceFork += (float)Math.random();
-    System.out.println(chanceFork);
+    //System.out.println(chanceFork);
     if (chanceFork > 3) {
       forkedLightningLeft(newX_2, newY_2);
       forkedLightningRight(newX_2, newY_2);
