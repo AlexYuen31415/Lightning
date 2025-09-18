@@ -179,7 +179,7 @@ void setup()
   size(400,400);
   lowtiergod = loadImage("lowtiergod.jpeg");
   lowtiergodshower = loadImage("lowtiergodshower.jpeg");
-  //frameRate(5);
+  frameRate(15);
 }
 void draw()
 {
