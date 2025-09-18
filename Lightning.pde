@@ -1,3 +1,5 @@
+Gang I cant make another fork what do i do
+
 PImage lowtiergod;
 PImage lowtiergodshower;
 float strok = 2.5;
@@ -179,7 +181,7 @@ void setup()
   size(400,400);
   lowtiergod = loadImage("lowtiergod.jpeg");
   lowtiergodshower = loadImage("lowtiergodshower.jpeg");
-  frameRate(15);
+  //frameRate(5);
 }
 void draw()
 {
@@ -196,5 +198,8 @@ void mousePressed()
 {
   lightning();
   flashy = 255;
+  lightning();
   flashy2 = 255;
+  lightning();
 }
+
