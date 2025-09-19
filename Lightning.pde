@@ -7,7 +7,44 @@ void lightning() {
   float y = 0;
   float chanceFork = 0;
   strok = 2.5;
+  
+  float lightningcolor = (int)(Math.random()*2);
+  float c = (int)(Math.random()*255);
+  float r = 0;
+  float g = 0;
+  float b = 0;
+  
+  if (lightningcolor == 0) {
+    //yellow
+    r = 255;
+    g = 255;
+    b = 0;
+  } else {
+    //gray scale
+    r = c;
+    g = c;
+    b = c;
+  }
+  
   /*
+  if (lightningcolor == 0) {
+    //yellow
+    r = c;
+    g = c;
+    b = 0;
+  } else if (lightningcolor == 1) {
+    //pink
+    r = c;
+    g = 0;
+    b = c;
+  } else {
+    //blue
+    r = 0;
+    g = c;
+    b = c;
+  }
+  
+  
   ArrayList<Float> xs = new ArrayList<Float>();
   ArrayList<Float> ys = new ArrayList<Float>();
   
@@ -49,15 +86,15 @@ void lightning() {
     float newY = y + random(10, 20);
     
     strokeWeight(strok*3);
-    stroke(205, 50);
+    stroke(r - 40, g - 40, b - 40, 25);
     line(x, y, newX, newY);
     
     strokeWeight(strok*2);
-    stroke(235, 75);
+    stroke(r - 20, g - 20, b - 20, 50);
     line(x, y, newX, newY);
     
     strokeWeight(strok);
-    stroke(255, 100);
+    stroke(r, g, b, 75);
     line(x, y, newX, newY);
     
     x = newX;
@@ -67,8 +104,8 @@ void lightning() {
     //System.out.println(chanceFork);
     if (chanceFork > 3) {
       strok = strok/1.67;
-      forkedLightningLeft(x, y);
-      forkedLightningRight(x, y);
+      forkedLightningLeft(x, y, r, g, b);
+      forkedLightningRight(x, y, r, g, b);
       break;
     }
   }
@@ -84,7 +121,7 @@ void fork() {
   */
 }
 
-void forkedLightningLeft(float startX, float startY) {
+void forkedLightningLeft(float startX, float startY, float r, float g, float b) {
   float x = startX;
   float y = startY;
   float chanceFork = 0;
@@ -94,15 +131,15 @@ void forkedLightningLeft(float startX, float startY) {
     float newY_1 = y + random(10, 20);
     
     strokeWeight(strok*3);
-    stroke(205, 50);
+    stroke(r - 40, g - 40, b - 40, 25);
     line(x, y, newX_1, newY_1);
     
     strokeWeight(strok*2);
-    stroke(235, 75);
+    stroke(r - 20, g - 20, b - 20, 50);
     line(x, y, newX_1, newY_1);
     
     strokeWeight(strok);
-    stroke(255, 100);
+    stroke(r, g, b, 75);
     line(x, y, newX_1, newY_1);
     
     x = newX_1;
@@ -111,32 +148,32 @@ void forkedLightningLeft(float startX, float startY) {
     chanceFork += (float)Math.random();
     //System.out.println(chanceFork);
     if (chanceFork > 3) {
-      forkedLightningLeft(newX_1, newY_1);
-      forkedLightningRight(newX_1, newY_1);
+      forkedLightningLeft(newX_1, newY_1, r, g, b);
+      forkedLightningRight(newX_1, newY_1, r, g, b);
       break;
     }
   }
 }
 
-void forkedLightningRight(float startX, float startY) {
+void forkedLightningRight(float startX, float startY, float r, float g, float b) {
   float x = startX;
   float y = startY;
   float chanceFork = 0;
-  
+
   while (y < 400) {
     float newX_2 = x + random(-5, 10);
     float newY_2 = y + random(10, 20);
     
     strokeWeight(strok*3);
-    stroke(205, 50);
+    stroke(r - 40, g - 40, b - 40, 25);
     line(x, y, newX_2, newY_2);
     
     strokeWeight(strok*2);
-    stroke(235, 75);
+    stroke(r - 20, g - 20, b - 20, 50);
     line(x, y, newX_2, newY_2);
     
     strokeWeight(strok);
-    stroke(255, 100);
+    stroke(r, g, b, 75);
     line(x, y, newX_2, newY_2);
     
     x = newX_2;
@@ -145,8 +182,8 @@ void forkedLightningRight(float startX, float startY) {
     chanceFork += (float)Math.random();
     //System.out.println(chanceFork);
     if (chanceFork > 3) {
-      forkedLightningLeft(newX_2, newY_2);
-      forkedLightningRight(newX_2, newY_2);
+      forkedLightningLeft(newX_2, newY_2, r, g, b);
+      forkedLightningRight(newX_2, newY_2, r, g, b);
       break;
     }
   }
@@ -200,4 +237,3 @@ void mousePressed()
   flashy2 = 255;
   lightning();
 }
-
